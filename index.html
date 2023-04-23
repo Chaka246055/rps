@@ -13,9 +13,33 @@
   <span class="circle" onclick="play ('paper')">P</span>
   <span class ="circle" onclick="play ('Scissors')">S</span></p>
 
-  <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors">RULES</a>
+  <a class="instruction" href="https://en.wikipedia.org/wiki/Rock_paper_scissors">RULES</a>
 
-  <script src="script.js"></script>
+  <script src="script.js">
+    function say(myMessage){
+      var msg = new SpeechSynthesisUtterance(myMessage)
+    }
+
+    function play(user) {
+      let result = "";
+      if (user === 'rock') {
+        result ="tie";
+      }
+
+      if (user === 'paper) {
+        result ="win";
+      }
+
+      if (user === 'scissors') {
+        result ="lose";
+      }
+      var theMessage = "Computer chose rock you " + result + "!"
+      alert(theMessage);
+      say(theMessage);
+    }
+  </script>
+
+    
 </body>
 
 </html>
